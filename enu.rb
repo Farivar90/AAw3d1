@@ -63,6 +63,22 @@ class Array
         end
         my_zip
     end
+
+    def my_rotate(n = 1)
+        my_rotate = self.map {|ele| ele}
+        if n >= 0
+            n.times do 
+                ele = my_rotate.shift
+                my_rotate << ele
+            end
+        else
+            n.abs.times do 
+                ele = my_rotate.pop
+                my_rotate.unshift(ele) 
+            end
+        end
+        my_rotate
+    end
     
 end
 
