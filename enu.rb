@@ -1,6 +1,13 @@
 class Array
     def my_each(&prc)
-        self.map! {|ele| prc.call(ele)}
+        i = 0
+        while i < self.length
+         prc.call(self[i])
+         i += 1
+        end
+        self
     end
+
+    
 end
 
