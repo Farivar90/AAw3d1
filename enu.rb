@@ -39,6 +39,30 @@ class Array
         end
         counter == self.length
     end
+
+    def my_flatten
+        new_array = []
+        self.my_each do |ele|
+            if ele.is_a? (Array)
+                new_array += ele.my_flatten
+            else
+                new_array << ele
+            end
+        end
+        new_array
+    end
+    def my_zip(*arg)
+        my_zip = Array.new(self.length){Array.new}
+        i = 0
+        while i < self.length 
+            my_zip[i] << self[i]
+            arg.each do |arr| 
+                my_zip[i] << arr[i]
+            end
+            i +=1
+        end
+        my_zip
+    end
     
 end
 
