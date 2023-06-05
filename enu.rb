@@ -7,7 +7,13 @@ class Array
         end
         self
     end
-
+    def select(&prc)
+        new_array = []
+        self.my_each(&prc) do |ele|
+            new_array << ele if prc.call(ele)
+        end
+        new_array
+    end
     
 end
 
