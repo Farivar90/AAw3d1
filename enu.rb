@@ -79,6 +79,21 @@ class Array
         end
         my_rotate
     end
-    
+    def my_join(sep = "")
+        my_join = ""
+        self.each do |ele|
+            my_join += ele + sep
+        end
+        my_join        
+    end
+    def my_reverse
+        my_reverse = []
+        index = self.length - 1
+        while index > -1
+            my_reverse << self[index]
+            index -=1
+        end
+        my_reverse
+    end
 end
 
